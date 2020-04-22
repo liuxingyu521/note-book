@@ -1,7 +1,7 @@
 module.exports = {
+  base: '/note-book/',
   title: "Xuer 的笔记",
   themeConfig: {
-    base: '/note-book/',
     sidebar: [
       '/',
       '/babel/',
