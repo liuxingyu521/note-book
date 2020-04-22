@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>babel | Xuer 的笔记</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/assets/css/0.styles.8bf941ca.css" as="style"><link rel="preload" href="/assets/js/app.2c242b4e.js" as="script"><link rel="preload" href="/assets/js/2.5b02091c.js" as="script"><link rel="preload" href="/assets/js/3.9d31d93c.js" as="script"><link rel="preload" href="/assets/js/6.4e1d9dc6.js" as="script"><link rel="prefetch" href="/assets/js/4.3a1f52c7.js"><link rel="prefetch" href="/assets/js/5.832c2c8f.js"><link rel="prefetch" href="/assets/js/7.88ba329a.js"><link rel="prefetch" href="/assets/js/8.83cb64c7.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8bf941ca.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Xuer 的笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><!---->  <ul class="sidebar-links"><li><a href="/" class="sidebar-link">开始</a></li><li><a href="/babel/" class="active sidebar-link">babel</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/babel/#名词解释" class="sidebar-link">名词解释</a></li><li class="sidebar-sub-header"><a href="/babel/#基本使用" class="sidebar-link">基本使用</a></li><li class="sidebar-sub-header"><a href="/babel/#配置文件" class="sidebar-link">配置文件</a></li><li class="sidebar-sub-header"><a href="/babel/#一些配置插件的理解" class="sidebar-link">一些配置插件的理解</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="babel"><a href="#babel" class="header-anchor">#</a> babel</h1> <p><code>Babel</code> 是一个转换 ECMAScript 2015+ 的工具链，把高级语法转换成目标环境可用的代码。</p> <p><code>Babel</code> 本身不对代码做任何转换，即 <code>const babel = code =&gt; code;</code>，需要配合 babel 插件（<code>plugins</code> or <code>presets</code>）对代码做转换。</p> <h2 id="名词解释"><a href="#名词解释" class="header-anchor">#</a> 名词解释</h2> <ul><li><strong>plugins</strong> ： 插件，对代码做转换的插件工具。（配置中为数组类型，按照数组顺序依次执行）</li> <li><strong>presets</strong> ： 预设，是一组插件的集合。（配置中为数组类型，按照数组顺序 <strong>逆序</strong> 执行）</li> <li><strong>polyfill</strong> ： 对一些目标环境没有的特性做兼容处理的等价代码。</li></ul> <h2 id="基本使用"><a href="#基本使用" class="header-anchor">#</a> 基本使用</h2> <ol><li><p>安装工具库和预设环境，以及对目标环境缺失的特性做 polyfill 的文件</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># 工具库</span>
+$ <span class="token function">npm</span> <span class="token function">install</span> --save-dev @babel/core @babel/cli @babel/preset-env
+<span class="token comment"># 代码 polyfill</span>
+$ <span class="token function">npm</span> <span class="token function">install</span> --save @babel/polyfill
+</code></pre></div></li> <li><p>创建配置文件（<code>babel.config.json</code> or <code>.babelrc.json</code>，具体区别见下方 <a href="#%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">配置文件命名区别</a>）</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;presets&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string">&quot;@babel/env&quot;</span>
+  <span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre></div></li> <li><p>可使用命令行对代码进行转换</p> <div class="language-shell extra-class"><pre class="language-shell"><code>$ npx babel src --out-dir lib
+</code></pre></div></li></ol> <h2 id="配置文件"><a href="#配置文件" class="header-anchor">#</a> 配置文件</h2> <p>在 <code>babel</code> 中，处理代码转换全部依靠插件配置，一个配置例子如下</p> <div class="language-js extra-class"><pre class="language-js"><code><span class="token comment">// babel config function 参见：https://babeljs.io/docs/en/config-files#config-function-api</span>
+module<span class="token punctuation">.</span><span class="token function-variable function">exports</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">api</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 此配置只会动态计算一次，导出静态对象给 babel 使用</span>
+  api<span class="token punctuation">.</span><span class="token function">cache</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span>
+
+  <span class="token keyword">return</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 预设 =&gt; 一些转换插件的集合</span>
+    presets<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">[</span>
+        <span class="token string">'@babel/env'</span><span class="token punctuation">,</span> <span class="token comment">// 仅转译代码里使用的浏览器支持的新特性，其他特性需要额外安装 plugins</span>
+        <span class="token punctuation">{</span>
+          useBuiltIns<span class="token operator">:</span> <span class="token string">'usage'</span><span class="token punctuation">,</span> <span class="token comment">// 在代码中使用到环境中没有的特性时，自动载入需要的 polyfill 代码</span>
+          corejs<span class="token operator">:</span> <span class="token punctuation">{</span>
+            version<span class="token operator">:</span> <span class="token number">3</span><span class="token punctuation">,</span>
+            proposals<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 所有建议的特性都用 corejs 的代码来polyfill</span>
+          <span class="token punctuation">}</span><span class="token punctuation">,</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span>
+      <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token comment">// 单独配置插件</span>
+    plugins<span class="token operator">:</span> <span class="token punctuation">[</span>
+      <span class="token comment">// 将每个文件里用到的公共方法函数，都从 @babel/runtime 里导出，</span>
+      <span class="token comment">// 去掉每个文件的重复函数，减少打包体积</span>
+      <span class="token string">'@babel/plugin-transform-runtime'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h3 id="配置文件命名区别"><a href="#配置文件命名区别" class="header-anchor">#</a> 配置文件命名区别</h3> <ul><li><code>babel.config.json</code> or <code>.babelrc.json</code>: 使用 <code>JSON5</code> 解析，json 格式的进阶版，可注释</li> <li><code>babel.config.cjs</code>: 文件格式为 <code>commonjs</code> 语法，配置使用 <code>module.exports = {}</code> 导出</li> <li><code>babel.config.mjs</code>: 文件格式为 <code>ECMAScript modules</code> 的语法，使用 <code>export</code> 导出</li> <li><code>babel.config.js</code>: 如果 babel 配置里声明了 <code>type: module</code>，和 <code>babel.config..mjs</code> 行为一样，否则和 <code>babel.config.cjs</code> 行为一致，使用 <code>mocule.exports = {}</code> 导出</li></ul> <h2 id="一些配置插件的理解"><a href="#一些配置插件的理解" class="header-anchor">#</a> 一些配置插件的理解</h2> <p>在 babel 中有很多的插件，很容易混淆，不知道哪个该引哪个不该引，接下来分享下这些插件的作用。</p> <h3 id="babel-polyfill"><a href="#babel-polyfill" class="header-anchor">#</a> @babel/polyfill</h3> <p><strong>注意：</strong> 在 babel 7.4.0 之后，已自动集成 <code>core-js/stable</code>(对 ECMAScript 特性做 polyfill) 和 <code>regenerator-runtime/runtime</code>(转换 generator 函数)。不需要单独引入 <code>@babel/polyfill</code></p> <p>这个插件用来模拟全部 es2015+ 的特性环境，会在全局原型上增加 polyfill。</p> <h3 id="transform-runtime"><a href="#transform-runtime" class="header-anchor">#</a> transform-runtime</h3> <p>这个概念需要 2 个插件支持，<code>@babel/plugin-transform-runtime</code> 和 <code>@babel/runtime</code></p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># devDependencies 依赖，用来把每个文件用到的公共函数从 `@babel/runtime` 中导出</span>
+$ <span class="token function">npm</span> <span class="token function">install</span> -D @babel/plugin-transform-runtime
+
+<span class="token comment"># 安装实际引用的公共代码，会被打包在最终文件中</span>
+$ <span class="token function">npm</span> <span class="token function">install</span> --save @babel/runtime
+</code></pre></div><p>这个插件使用 <code>@babel/runtime</code> 中的 helper 函数来替代每个文件中使用的公共函数，比如 <code>_createClass</code>、<code>_inherits</code>，使得每个文件没有重复函数实现，减少打包体积。</p></div> <footer class="page-edit"><!----> <div class="last-updated"><span class="prefix">最后更新时间:</span> <span class="time">4/22/2020, 5:28:24 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/" class="prev router-link-active">
+        开始
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.2c242b4e.js" defer></script><script src="/assets/js/2.5b02091c.js" defer></script><script src="/assets/js/3.9d31d93c.js" defer></script><script src="/assets/js/6.4e1d9dc6.js" defer></script>
+  </body>
+</html>
