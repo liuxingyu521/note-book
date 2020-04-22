@@ -1,0 +1,14 @@
+{
+  "name": "note-book",
+  "version": "1.0.0",
+  "scripts": {
+    "docs:build": "vuepress build docs"
+  },
+  "description": "记录自己平时工作以及学习中的知识笔记，方便日后温习",
+  "repository": "git@github.com:liuxingyu521/note-book.git",
+  "author": "liuxingyu521 <xuj_power@qq.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^1.4.1"
+  }
+}
