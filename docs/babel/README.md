@@ -81,13 +81,15 @@ module.exports = (api) => {
 
 ### @babel/polyfill
 
-**注意：** 在 babel 7.4.0 之后，已自动集成 `core-js/stable`(对 ECMAScript 特性做 polyfill) 和 `regenerator-runtime/runtime`(转换 generator 函数)。不需要单独引入 `@babel/polyfill`  
-
 这个插件用来模拟全部 es2015+ 的特性环境，会在全局原型上增加 polyfill。
+
+**注意：** 在 babel 7.4.0 之后，已自动集成 `core-js/stable`(对 ECMAScript 特性做 polyfill) 和 `regenerator-runtime/runtime`(转换 generator 函数)。不需要单独引入 `@babel/polyfill`  
 
 ### transform-runtime
 
-这个概念需要 2 个插件支持，`@babel/plugin-transform-runtime` 和 `@babel/runtime`
+转换运行时使用 `@babel/runtime` 中的 helper 函数来替代每个文件中使用的公共函数，比如 `_createClass`、`_inherits`，使得每个文件没有重复函数实现，减少打包体积。
+
+转换运行时需要 2 个插件支持，`@babel/plugin-transform-runtime` 和 `@babel/runtime`
 
 ```shell
 # devDependencies 依赖，用来把每个文件用到的公共函数从 `@babel/runtime` 中导出
@@ -96,5 +98,3 @@ $ npm install -D @babel/plugin-transform-runtime
 # 安装实际引用的公共代码，会被打包在最终文件中
 $ npm install --save @babel/runtime
 ```
-
-这个插件使用 `@babel/runtime` 中的 helper 函数来替代每个文件中使用的公共函数，比如 `_createClass`、`_inherits`，使得每个文件没有重复函数实现，减少打包体积。
