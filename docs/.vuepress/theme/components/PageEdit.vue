@@ -31,7 +31,10 @@ export default {
 
   computed: {
     lastUpdated () {
-      return this.$page.lastUpdated
+      const lastUpdatedDate = new Date(this.$page.lastUpdated || Date.now())
+      return this.$page.lastUpdated && (
+        `${[lastUpdatedDate.getFullYear(), lastUpdatedDate.getMonth() + 1, lastUpdatedDate.getDate()].join('-')} ${[lastUpdatedDate.getHours(), lastUpdatedDate.getMinutes(), lastUpdatedDate.getSeconds()].join(':')}`
+      )
     },
 
     lastUpdatedText () {
