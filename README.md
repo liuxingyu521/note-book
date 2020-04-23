@@ -1,4 +1,4 @@
-<h1 align="center">NOTE-BOOK</h1>
+<p align="center" style="font-size: 2em">NOTE-BOOK</p>
 
 <p align="center">
   <a href="https://travis-ci.com/liuxingyu521/note-book" target="_blank"><img src="https://travis-ci.com/liuxingyu521/note-book.svg?branch=master" /></a>
