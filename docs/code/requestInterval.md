@@ -1,4 +1,4 @@
-### 自定义封装一个轮询函数
+### 自定义封装轮询函数
 
 ```typescript
 import axios, { AxiosRequestConfig } from 'axios';
@@ -50,7 +50,7 @@ const requestInterval = ({
 
     counter++
     if (counter >= limit) {
-      clearInterval(intervalTimer)
+      clearTimeout(intervalTimer)
       limitCb()
       return
     }
