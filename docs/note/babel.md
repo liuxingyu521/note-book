@@ -1,4 +1,8 @@
 
+---
+title: babel 知识
+---
+
 # babel
 
 `Babel` 是一个转换 ECMAScript 2015+ 的工具链，把高级语法转换成目标环境可用的代码。

@@ -1,6 +1,13 @@
-/** 知识总结-侧边栏 */
+/** 知识汇总-侧边栏 */
 const noteSidebarList = [
-  'babel'
+  ['babel', 'babel 相关'],
+  {
+    title: 'docker',
+    children: [
+      ['docker/init', '初识与安装'],
+      // ['docker/command', '常用命令'],
+    ]
+  }
 ]
 
 /** 代码片段-侧边栏 */
@@ -13,7 +20,7 @@ module.exports = {
   title: "Xuer 的笔记",
   themeConfig: {
     nav: [
-      { text: '知识总结', link: '/note/babel' },
+      { text: '知识汇总', link: '/note/babel' },
       { text: '代码片段', link: '/code/requestInterval' },
     ],
     sidebar: {
