@@ -27,7 +27,7 @@ title: 初识与安装
 
 docker 可以运行在多种环境中，本文只演示 linux 下 centos 系统的 docker 安装步骤（因为我的云服务器是 centos 环境 😂 ），其他环境的安装请参照 [官方文档](https://docs.docker.com/engine/install/)
 
-1. 首先确认当前系统里没有装过 docker ，如果装了之前旧版的话，可以通过一下命令删除掉重新安装新版 docker。
+1. 首先确认当前系统里没有装过 docker ，如果装了之前旧版的话，可以通过以下命令删除掉重新安装新版 docker。
 
     ```sh
     $ sudo yum remove docker \
@@ -59,7 +59,7 @@ docker 可以运行在多种环境中，本文只演示 linux 下 centos 系统�
     $ sudo yum install docker-ce-<VERSION_STRING> docker-ce-cli-<VERSION_STRING> containerd.io
     ```
 
-4. 此时 docker 已安装在系统当中，但是出于关闭状态，用下面的命令 开启 docker 
+4. 此时 docker 已安装在系统当中，但是处于关闭状态，用下面的命令开启 docker 
 
     ```sh
     # 此条命令没有任何输出，就代表启动成功
