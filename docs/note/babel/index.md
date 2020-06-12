@@ -1,5 +1,8 @@
 ---
 title: babel 知识
+next: ['/note/docker/init', 'docker 知识']
+  # title: 'docker 知识'
+  # link: '/note/docker/init'
 ---
 
 # babel

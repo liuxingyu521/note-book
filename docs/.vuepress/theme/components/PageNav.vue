@@ -60,7 +60,9 @@
 <script>
 import { resolvePage } from '../util'
 import isString from 'lodash/isString'
+import isArray from 'lodash/isArray'
 import isNil from 'lodash/isNil'
+import { join as joinPath } from 'path'
 
 export default {
   name: 'PageNav',
@@ -104,7 +106,7 @@ function resolvePageLink (
   { $themeConfig, $page, $route, $site, sidebarItems }
 ) {
   const { resolveLink, getThemeLinkConfig, getPageLinkConfig } = linkType
-
+  
   // Get link config from theme
   const themeLinkConfig = getThemeLinkConfig($themeConfig)
 
@@ -113,11 +115,15 @@ function resolvePageLink (
 
   // Page link config will overwrite global theme link config if defined
   const link = isNil(pageLinkConfig) ? themeLinkConfig : pageLinkConfig
-
   if (link === false) {
     return
   } else if (isString(link)) {
     return resolvePage($site.pages, link, $route.path)
+  } else if (isArray(link) && link.length === 2) { // 配置数组格式的链接 => ['页面路径', '自定义显示文案']
+    return {
+      title: link[1],
+      path: link[0]
+    }
   } else {
     return resolveLink($page, sidebarItems)
   }
