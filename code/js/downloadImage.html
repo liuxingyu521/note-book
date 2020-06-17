@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>将图片下载到本地 | Xuer 的笔记</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    
+    <meta name="description" content="">
+    <link rel="preload" href="/note-book/assets/css/0.styles.fdbd089f.css" as="style"><link rel="preload" href="/note-book/assets/js/app.b5423416.js" as="script"><link rel="preload" href="/note-book/assets/js/2.7abe4127.js" as="script"><link rel="preload" href="/note-book/assets/js/3.d401206f.js" as="script"><link rel="preload" href="/note-book/assets/js/7.03867b6e.js" as="script"><link rel="prefetch" href="/note-book/assets/js/10.438fd956.js"><link rel="prefetch" href="/note-book/assets/js/11.5286cf57.js"><link rel="prefetch" href="/note-book/assets/js/12.05c64376.js"><link rel="prefetch" href="/note-book/assets/js/13.36e5f11b.js"><link rel="prefetch" href="/note-book/assets/js/14.13d729ed.js"><link rel="prefetch" href="/note-book/assets/js/4.885ae732.js"><link rel="prefetch" href="/note-book/assets/js/5.da7d7cc2.js"><link rel="prefetch" href="/note-book/assets/js/6.cdb62e05.js"><link rel="prefetch" href="/note-book/assets/js/8.78aae9b3.js"><link rel="prefetch" href="/note-book/assets/js/9.b9ece56b.js">
+    <link rel="stylesheet" href="/note-book/assets/css/0.styles.fdbd089f.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/note-book/" class="home-link router-link-active"><!----> <span class="site-name">Xuer 的笔记</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/note-book/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/note-book/note/" class="nav-link">
+  知识汇总
+</a></div><div class="nav-item"><a href="/note-book/code/" class="nav-link router-link-active">
+  代码片段
+</a></div> <a href="https://github.com/liuxingyu521/note-book" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/note-book/" class="nav-link">
+  首页
+</a></div><div class="nav-item"><a href="/note-book/note/" class="nav-link">
+  知识汇总
+</a></div><div class="nav-item"><a href="/note-book/code/" class="nav-link router-link-active">
+  代码片段
+</a></div> <a href="https://github.com/liuxingyu521/note-book" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>js</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/note-book/code/js/requestInterval.html" class="sidebar-link">轮询函数</a></li><li><a href="/note-book/code/js/downloadImage.html" class="active sidebar-link">本地保存图片</a><ul class="sidebar-sub-headers"></ul></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h3 id="将图片下载到本地"><a href="#将图片下载到本地" class="header-anchor">#</a> 将图片下载到本地</h3> <p>原理： 通过使用 <code>&lt;a&gt;</code> 标签的 <code>download</code> 属性，实现图片本地保存。</p> <p><strong>注意点</strong>： <code>&lt;a&gt;</code> 标签需要同源的 <code>href</code> 链接或者 <code>blob:</code> 链接、<code>data:</code> 链接才能使用 <code>downlaod</code> 属性进行下载</p> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token comment">/**
+ * 下载图片到本地
+ * @param {string} inputImgUrl 图片地址
+ * @param {string} outputImgFilename 下载保存的图片文件名
+ */</span>
+<span class="token keyword">function</span> <span class="token function">downloadImage</span><span class="token punctuation">(</span><span class="token parameter">inputImgUrl<span class="token punctuation">,</span> outputImgFilename</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> image <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token comment">// 解决 canvas 资源不能使用的问题</span>
+  image<span class="token punctuation">.</span><span class="token function">setAttribute</span><span class="token punctuation">(</span><span class="token string">'crossOrigin'</span><span class="token punctuation">,</span> <span class="token string">'anonymous'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+  image<span class="token punctuation">.</span><span class="token function-variable function">onload</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">const</span> canvas <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'canvas'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> context <span class="token operator">=</span> canvas<span class="token punctuation">.</span><span class="token function">getContext</span><span class="token punctuation">(</span><span class="token string">'2d'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+      canvas<span class="token punctuation">.</span>width <span class="token operator">=</span> image<span class="token punctuation">.</span>width<span class="token punctuation">;</span>
+      canvas<span class="token punctuation">.</span>height <span class="token operator">=</span> image<span class="token punctuation">.</span>height<span class="token punctuation">;</span>
+      context<span class="token punctuation">.</span><span class="token function">drawImage</span><span class="token punctuation">(</span>image<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> image<span class="token punctuation">.</span>width<span class="token punctuation">,</span> image<span class="token punctuation">.</span>height<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> url <span class="token operator">=</span> canvas<span class="token punctuation">.</span><span class="token function">toDataURL</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+
+      <span class="token keyword">const</span> a <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+      <span class="token comment">// 设置可下载属性&amp;文件名</span>
+      a<span class="token punctuation">.</span>download <span class="token operator">=</span> outputImgFilename <span class="token operator">||</span> <span class="token string">''</span><span class="token punctuation">;</span>
+      a<span class="token punctuation">.</span>href <span class="token operator">=</span> url<span class="token punctuation">;</span>
+
+      <span class="token comment">// 模拟 a 的点击事件</span>
+      a<span class="token punctuation">.</span><span class="token function">dispatchEvent</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MouseEvent</span><span class="token punctuation">(</span><span class="token string">'click'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+  <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  image<span class="token punctuation">.</span>src <span class="token operator">=</span> inputImgUrl<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/liuxingyu521/note-book/edit/master/docs/code/js/downloadImage.md" target="_blank" rel="noopener noreferrer">在 Github 上编辑此页</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">最后更新时间:</span> <span class="time">2020-6-17 3:7:39</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/note-book/code/js/requestInterval.html" class="prev">
+        轮询函数
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/note-book/assets/js/app.b5423416.js" defer></script><script src="/note-book/assets/js/2.7abe4127.js" defer></script><script src="/note-book/assets/js/3.d401206f.js" defer></script><script src="/note-book/assets/js/7.03867b6e.js" defer></script>
+  </body>
+</html>
