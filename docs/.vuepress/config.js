@@ -5,14 +5,20 @@ const noteSidebarList = [
     title: 'docker',
     children: [
       ['docker/init', '初识与安装'],
-      // ['docker/command', '常用命令'],
+      // ['docker/command', '命令与实践'],
     ]
   }
 ]
 
 /** 代码片段-侧边栏 */
 const codeSidebarList = [
-  ['requestInterval', '轮询函数'],
+  {
+    title: 'js',
+    children: [
+      ['js/requestInterval', '轮询函数'],
+      ['js/downloadImage', '本地保存图片'],
+    ]
+  }
 ]
 
 module.exports = {
@@ -22,7 +28,7 @@ module.exports = {
     nav: [
       { text: '首页', link: '/' },
       { text: '知识汇总', link: '/note/' },
-      { text: '代码片段', link: '/code/requestInterval' },
+      { text: '代码片段', link: '/code/' },
     ],
     sidebar: {
       '/note/': noteSidebarList,
@@ -33,5 +39,8 @@ module.exports = {
     editLinkText: '在 Github 上编辑此页',
     repo: 'https://github.com/liuxingyu521/note-book',
     docsDir: 'docs',
+  },
+  markdown: {
+    lineNumbers: true
   }
 }
