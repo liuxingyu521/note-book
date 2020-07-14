@@ -6,3 +6,4 @@
 
   * <RouterLink to="/code/js/requestInterval" > 轮询函数 </RouterLink>
   * <RouterLink to="/code/js/downloadImage" > 本地保存图片 </RouterLink>
+  * <RouterLink to="/code/js/others" > 其他 </RouterLink>

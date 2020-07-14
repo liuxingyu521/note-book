@@ -2,7 +2,10 @@
 
 原理： 通过使用 `<a>` 标签的 `download` 属性，实现图片本地保存。
 
-**注意点**： `<a>` 标签需要同源的 `href` 链接或者 `blob:` 链接、`data:` 链接才能使用 `downlaod` 属性进行下载
+**注意点**： 
+
+  - `<a>` 标签需要同源的 `href` 链接或者 `blob:` 链接、`data:` 链接才能使用 `downlaod` 属性进行下载
+  - `canvas` 的 `toDataUrl` 方法使用前提是 `canvas` 要加载的远程图片设置了跨域头 => `access-control-allow-origin`，否则还是无法下载图片
 
 ```js
 /**

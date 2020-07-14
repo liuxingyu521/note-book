@@ -17,6 +17,7 @@ const codeSidebarList = [
     children: [
       ['js/requestInterval', '轮询函数'],
       ['js/downloadImage', '本地保存图片'],
+      ['js/others', '其他'],
     ]
   }
 ]
