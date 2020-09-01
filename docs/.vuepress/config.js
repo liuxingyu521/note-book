@@ -1,13 +1,46 @@
+
+// const noteSidebarList = [
+//   ['babel/', 'babel 相关'],
+//   {
+//     title: 'docker',
+//     children: [
+//       ['docker/init', '初识与安装'],
+//       // ['docker/command', '命令与实践'],
+//     ]
+//   }
+// ]
 /** 知识汇总-侧边栏 */
 const noteSidebarList = [
-  ['babel/', 'babel 相关'],
   {
-    title: 'docker',
+    title: '前端',
     children: [
-      ['docker/init', '初识与安装'],
-      // ['docker/command', '命令与实践'],
+      ['fe/babel/', 'babel 相关']
     ]
-  }
+  },
+  {
+    title: '后端',
+    children: [
+      // []
+    ]
+  },
+  {
+    title: '运维相关',
+    children: [
+      {
+        title: 'shell 命令',
+        children: [
+          ['op/shell/ssh', 'SSH 相关']
+        ]
+      },
+      {
+        title: 'docker',
+        children: [
+          ['op/docker/init', '初识与安装'],
+          // ['docker/command', '命令与实践'],
+        ]
+      },
+    ]
+  },
 ]
 
 /** 代码片段-侧边栏 */
