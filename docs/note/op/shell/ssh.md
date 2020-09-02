@@ -1,5 +1,5 @@
 ---
-
+srollbar: auto
 ---
 
 # SSH
@@ -13,7 +13,7 @@
 - [ssh-copy-id](#ssh-copy-id)
 - [ssh-add](#ssh-add)
 
-### ssh 登录远程服务器
+## ssh 登录远程服务器
 
 ```shell
 # user 是要登录的远程用户名
@@ -23,7 +23,7 @@ $ ssh user@hostname
 user@hostname's password: ...
 ```
 
-### ssh-keygen
+## ssh-keygen
 
 [ssh-keygen](https://www.ssh.com/ssh/keygen/) 用于生成公秘钥，为本地机器和远程机器建立安全凭证。公钥放到远程计算机上，秘钥放到本地计算机。
 
@@ -37,7 +37,7 @@ $ ssh-keygen -t rsa -C "xuj_power@qq.com" -f '~/.ssh/github_id_rsa'
 - -f : 表示生成的秘钥文件名，可使用相对/绝对路径，已上面为例，会对应生成 `~/.ssh/github_id_rsa` 和 `~/.ssh/github_id_rsa.pub` 2个文件
 - -C : 表示公钥的附加评论信息，一般写邮箱地址
 
-### ssh-copy-id
+## ssh-copy-id
 
 `ssh-keygen` 工具生成的公钥需要复制到远程服务器上的 `authorized_keys` 文件里才能进行通讯，而 `ssh-copy-id` 就很方便的为我们做了这件事情
 
@@ -48,7 +48,7 @@ $ ssh-copy-id -i '~/.ssh/github_id_rsa' user@hostname
 
 - -i : 指定了需要复制到远程服务器上的公钥文件
 
-### ssh-add
+## ssh-add
 
 ssh 有一个帮助程序 `ssh-agent`，可以实现单点登录(SSO)，避免每次和远程服务器交互都需要验证身份。
 
