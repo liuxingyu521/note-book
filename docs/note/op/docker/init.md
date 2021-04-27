@@ -2,7 +2,7 @@
 title: 初识与安装
 ---
 
-<img src="https://wx2.sbimg.cn/2020/06/11/docker.png" width="300px" height="200px">
+<img src="https://cdn.jsdelivr.net/gh/liuxingyu521/pictureBed@picture/docker-logo.png" width="300px" height="200px">
 <br /><br />
 
 ## docker 是什么
@@ -75,4 +75,4 @@ docker 可以运行在多种环境中，本文只演示 linux 下 centos 系统�
 
     如果看到如下图所示的界面，就代表 docker 下载并成功运行起来咯！-_<
 
-    <img class="bordered" src="https://wx1.sbimg.cn/2020/06/11/docker-installed.png" />
+    <img class="bordered" src="https://cdn.jsdelivr.net/gh/liuxingyu521/pictureBed@picture/docker-installed.png" />

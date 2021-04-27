@@ -1,14 +1,3 @@
-
-// const noteSidebarList = [
-//   ['babel/', 'babel 相关'],
-//   {
-//     title: 'docker',
-//     children: [
-//       ['docker/init', '初识与安装'],
-//       // ['docker/command', '命令与实践'],
-//     ]
-//   }
-// ]
 /** 知识汇总-侧边栏 */
 const noteSidebarList = [
   {
@@ -55,6 +44,16 @@ const codeSidebarList = [
   }
 ]
 
+/** 读书笔记-侧边栏 */
+const bookNoteSidebarList = [
+  {
+    title: '金融类',
+    children: [
+      ['finance/ding-tou-shi-nian-cai-fu-zi-you', '定投十年，财富自由']
+    ]
+  }
+]
+
 module.exports = {
   base: '/note-book/',
   title: "Xuer 的笔记",
@@ -63,10 +62,12 @@ module.exports = {
       { text: '首页', link: '/' },
       { text: '知识汇总', link: '/note/' },
       { text: '代码片段', link: '/code/' },
+      { text: '读书笔记', link: '/book-note/' },
     ],
     sidebar: {
       '/note/': noteSidebarList,
       '/code/': codeSidebarList,
+      '/book-note/': bookNoteSidebarList,
     },
     lastUpdated: "最后更新时间",
     editLinks: true,
