@@ -29,7 +29,7 @@ user@hostname's password: ...
 
 ```shell
 # 输入后有提示消息一直按回车就好
-$ ssh-keygen -t rsa -C "xuj_power@qq.com" -f '~/.ssh/github_id_rsa'
+$ ssh-keygen -t rsa -C "xuj_power@qq.com" -f ~/.ssh/github_id_rsa
 ```
 
 参数含义
