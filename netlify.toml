@@ -1,3 +1,4 @@
 [[redirects]]
-  from = "/note-book"
-  to = "/"
+  from = "/note-book/*"
+  to = "/*"
+  status = 200
