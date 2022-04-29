@@ -56,3 +56,12 @@ ssh 有一个帮助程序 `ssh-agent`，可以实现单点登录(SSO)，避免�
 # 一般使用 -K 将已知秘钥添加到 ssh-agent 中，详细参数见官方文档：https://www.ssh.com/ssh/add
 $ ssh-add -K '~/.ssh/github_id_rsa'
 ```
+
+## 配置 ssh 持久连接
+
+```shell
+# 一般情况下客户端没有操作间隔一段时间就会主动断掉和服务器的链接，可通过配置做持久连接
+# 在客户端 /etc/ssh/ssh_config 文件中添加以下配置即可
+Host *
+    ServerAliveInterval 60
+```
