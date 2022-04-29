@@ -43,7 +43,7 @@ $ ssh-keygen -t rsa -C "xuj_power@qq.com" -f ~/.ssh/github_id_rsa
 
 ```shell
 # 执行完需要输入一次 user@hostname 的密码，登录成功就会把公钥写到 authorized_keys 文件里
-$ ssh-copy-id -i '~/.ssh/github_id_rsa' user@hostname
+$ ssh-copy-id -i ~/.ssh/github_id_rsa user@hostname
 ```
 
 - -i : 指定了需要复制到远程服务器上的公钥文件
